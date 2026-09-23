@@ -30,6 +30,11 @@ namespace KimJimin2649010
             }
         }
         public:
+            student(int d= 1234567, int s = 0, char g = 'F')
+            :id{d}, score{s}, grade{g}
+            {
+                testId(); testScore(); testGrade();
+            }
             void input(){
                 std::cout << "Enter Id: ";
                 std::cin >> id; testId();
@@ -41,10 +46,10 @@ namespace KimJimin2649010
             void setId(int d){id = d; testId();}
             void setScore(int s){score = s; testScore();}
             void setGrade(int g){grade = g; testGrade();}
-            void print(){std::cout << id << ", " << score << ", " << grade << "\n";}
-            int getId(){return id;}
-            int getScore(){return score;}
-            char getGrade(){return grade;}
+            void print() const {std::cout << id << ", " << score << ", " << grade << "\n";}
+            int getId() const {return id;}
+            int getScore() const {return score;}
+            char getGrade() const {return grade;}
     };
 }
 
